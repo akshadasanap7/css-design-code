@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Delivery Form</title>
+  <style>
+    /* Background */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: url("coffee.jpg") no-repeat center center/cover; /* Replace with your image */
+    }
+
+    /* Overlay for readability */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.55);
+    }
+
+    .form-container {
+      position: relative;
+      background: rgba(255,255,255,0.95);
+      padding: 30px;
+      border-radius: 16px;
+      width: 380px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      z-index: 1;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    h2 {
+      text-align: center;
+      color: #6f4e37;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 10px 0 6px;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+
+    /* Payment Buttons */
+    .payment-options {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 18px;
+      justify-content: space-between;
+    }
+
+    .payment-btn {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+      color: #fff;
+    }
+
+    .cod {
+      background: #6f4e37;
+    }
+
+    .online {
+      background: #d35400;
+    }
+
+    .payment-btn:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    /* Submit button */
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: #27ae60;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .submit-btn:hover {
+      background: #219150;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>☕ Coffee Delivery Form</h2>
+    <form>
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter your name" required>
+
+      <label>Phone Number</label>
+      <input type="tel" placeholder="Enter your phone number" required>
+
+      <label>Delivery Address</label>
+      <input type="text" placeholder="Enter your address" required>
+
+      <label>Select Item</label>
+      <select required>
+        <option value="">-- Choose an item --</option>
+        <option>Espresso</option>
+        <option>Cappuccino</option>
+        <option>Latte</option>
+        <option>Mocha</option>
+        <option>Americano</option>
+        <option>Cold Brew</option>
+      </select>
+
+      <label>Quantity</label>
+      <input type="number" value="1" min="1">
+
+      <label>Choose Payment Method</label>
+      <div class="payment-options">
+        <button type="button" class="payment-btn cod">💵 Cash on Delivery</button>
+        <button type="button" class="payment-btn online">💳 Online</button>
+      </div>
+
+      <button type="submit" class="submit-btn">🚀 Place Order</button>
+    </form>
+  </div>
+</body>
+</html>
